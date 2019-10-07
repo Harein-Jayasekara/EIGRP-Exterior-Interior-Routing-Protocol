@@ -1,0 +1,109 @@
+System Bootstrap, Version 12.1(3r)T2, RELEASE SOFTWARE (fc1)
+Copyright (c) 2000 by cisco Systems, Inc.
+PT 1001 (PTSC2005) processor (revision 0x200) with 60416K/5120K bytes of memory
+
+Readonly ROMMON initialized
+
+Self decompressing the image :
+########################################################################## [OK]
+
+              Restricted Rights Legend
+
+Use, duplication, or disclosure by the Government is
+subject to restrictions as set forth in subparagraph
+(c) of the Commercial Computer Software - Restricted
+Rights clause at FAR sec. 52.227-19 and subparagraph
+(c) (1) (ii) of the Rights in Technical Data and Computer
+Software clause at DFARS sec. 252.227-7013.
+
+           cisco Systems, Inc.
+           170 West Tasman Drive
+           San Jose, California 95134-1706
+
+
+
+Cisco Internetwork Operating System Software
+IOS (tm) PT1000 Software (PT1000-I-M), Version 12.2(28), RELEASE SOFTWARE (fc5)
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2005 by cisco Systems, Inc.
+Compiled Wed 27-Apr-04 19:01 by miwang
+
+PT 1001 (PTSC2005) processor (revision 0x200) with 60416K/5120K bytes of memory
+.
+Processor board ID PT0123 (0123)
+PT2005 processor: part number 0, mask 01
+Bridging software.
+X.25 software, Version 3.0.0.
+4 FastEthernet/IEEE 802.3 interface(s)
+2 Low-speed serial(sync/async) network interface(s)
+32K bytes of non-volatile configuration memory.
+63488K bytes of ATA CompactFlash (Read/Write)
+
+
+         --- System Configuration Dialog ---
+
+Would you like to enter the initial configuration dialog? [yes/no]: no
+
+
+Press RETURN to get started!
+
+
+
+Router>enable
+Router#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#
+Router(config)#hostname Preston
+Preston(config)#exit
+Preston#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Preston#
+Preston#
+Preston#
+Preston#
+Preston#
+Preston#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Preston(config)#int LOOPBACK1
+
+Preston(config-if)#
+%LINK-5-CHANGED: Interface Loopback1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Loopback1, changed state to up
+
+Preston(config-if)#ip address 4.4.4.0 255.255.255.0
+Bad mask /24 for address 4.4.4.0
+Preston(config-if)#ip address 4.4.4.1 255.255.255.0
+Preston(config-if)#
+Preston(config-if)#exit
+Preston(config)#int ser
+Preston(config)#int serial 2/0
+Preston(config-if)#no shut
+
+Preston(config-if)#
+%LINK-5-CHANGED: Interface Serial2/0, changed state to up
+
+Preston(config-if)#ip address 
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial2/0, changed state to up
+
+% Incomplete command.
+Preston(config-if)#ip address 192.168.24.7 255.255.255.0
+Preston(config-if)#exit
+Preston(config)#
+Preston(config)#int serial
+Preston(config)#int serial 3/0
+Preston(config-if)#ip address 192.168.34.8 255.255.255.0
+Preston(config-if)#no shut
+
+%LINK-5-CHANGED: Interface Serial3/0, changed state to down
+Preston(config-if)#
+Preston(config-if)#exit
+Preston(config)#exit
+Preston#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Preston#
+%LINK-5-CHANGED: Interface Serial3/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface Serial3/0, changed state to up

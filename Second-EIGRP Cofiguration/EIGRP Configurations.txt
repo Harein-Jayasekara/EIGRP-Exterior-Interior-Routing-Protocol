@@ -1,0 +1,123 @@
+						ROUTER KINGKONG
+Kingkong#
+Kingkong#
+Kingkong#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Kingkong(config)#router eigrp 1
+Kingkong(config-router)#no auto
+Kingkong(config-router)#no auto-summary 
+Kingkong(config-router)#network 192.168.12.0
+Kingkong(config-router)#network 192.168.13.0
+Kingkong(config-router)#exit
+Kingkong(config)#exit
+Kingkong#
+%SYS-5-CONFIG_I: Configured from console by console
+
+
+						ROUTER CARL
+
+Carl#
+Carl#
+Carl#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Carl(config)#router eigrp 1
+Carl(config-router)#no ?
+  auto-summary       Enable automatic network number summarization
+  distance           Define an administrative distance
+  eigrp              EIGRP specific commands
+  metric             Modify IGRP routing metrics and parameters
+  neighbor           Specify a neighbor router
+  network            Enable routing on an IP network
+  passive-interface  Suppress routing updates on an interface
+  redistribute       Redistribute information from another routing protocol
+  variance           Control load balancing variance
+Carl(config-router)#no no auto
+Carl(config-router)#no auto
+Carl(config-router)#no auto-summary 
+Carl(config-router)#network 192.168.24.0
+Carl(config-router)#network 192.168.12.0
+Carl(config-router)#
+%DUAL-5-NBRCHANGE: IP-EIGRP 1: Neighbor 192.168.12.4 (Serial2/0) is up: new adjacency
+
+Carl(config-router)#network 192.168.24.0
+Carl(config-router)#wxit
+                    ^
+% Invalid input detected at '^' marker.
+	
+Carl(config-router)#exit
+Carl(config)#exit
+Carl#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Carl#
+
+
+						ROUTER PRESTON
+
+
+
+Preston#
+Preston#
+Preston#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Preston(config)#
+Preston(config)#router eigrp 1
+Preston(config-router)#no auto
+Preston(config-router)#no auto-summary 
+Preston(config-router)#net
+Preston(config-router)#network ?
+  A.B.C.D  Network number
+Preston(config-router)#network 192.168.24.
+                               ^
+% Invalid input detected at '^' marker.
+	
+Preston(config-router)#network 192.168.24.0
+Preston(config-router)#
+%DUAL-5-NBRCHANGE: IP-EIGRP 1: Neighbor 192.168.24.6 (Serial2/0) is up: new adjacency
+
+Preston(config-router)#192.168.34.0
+                       ^
+% Invalid input detected at '^' marker.
+	
+Preston(config-router)#network 192.168.34.0
+Preston(config-router)#network 4.4.4.0
+Preston(config-router)#exit
+Preston(config)#exit
+Preston#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Preston#
+
+
+
+
+
+
+
+
+						ROUTER ANN
+
+Ann#
+Ann#
+Ann#
+Ann#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+Ann(config)#
+Ann(config)#
+Ann(config)#router eigrp
+% Incomplete command.
+Ann(config)#router eigrp 1
+Ann(config-router)#no auto
+Ann(config-router)#no auto-summary 
+Ann(config-router)#network 192.168.13.0
+Ann(config-router)#
+%DUAL-5-NBRCHANGE: IP-EIGRP 1: Neighbor 192.168.13.3 (Serial3/0) is up: new adjacency
+
+Ann(config-router)#network 192.168.34.0
+Ann(config-router)#
+%DUAL-5-NBRCHANGE: IP-EIGRP 1: Neighbor 192.168.34.8 (Serial2/0) is up: new adjacency
+
+Ann(config-router)#exit
+Ann(config)#exit
+Ann#
+%SYS-5-CONFIG_I: Configured from console by console
